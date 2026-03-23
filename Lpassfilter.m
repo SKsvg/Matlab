@@ -1,7 +1,12 @@
 %ideal low-pass filter
 img= imread('camera.jpg');
-[M,N] = size(img);
 
+if length(size(img))==3
+    img=rgb2gray(img);
+end
+
+img=im2double(img);
+[M,N] = size(img);
 F=fft2(img);
 F_shift=fftshift(F);
 D0=30;
