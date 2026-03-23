@@ -3,6 +3,7 @@ if length(size(I))==3
     I=rgb2gray(I);
 end
 
+I=double(I);
 se=strel('disk',5);
 bwhat=imerode(bw,se);
 boundary=~(bw-bwhat);
